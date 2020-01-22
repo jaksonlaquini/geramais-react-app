@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from 'infinite-react-carousel';
-import banner1 from './../../img/banner1.jpeg';
-import banner2 from './../../img/banner2.jpeg';
+import banner1 from './../../img/banner/banner1.jpeg';
+import banner2 from './../../img/logo.png';
 
 
 const SimpleSlider = () => {
