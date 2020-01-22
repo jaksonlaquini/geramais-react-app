@@ -11,3 +11,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.logo {
+  width: 158px;
+  height: 81px;
+  object-fit: cover;
+}
+
+.font-negrito {
+  font-weight: bold;
+}
+
+.mt-35 {
+  margin-top: 45px;
+  margin-bottom: -140px;
+}
+
+.borderBtnFundador{
+  border-color: #f8f9fa !important;
+}
+
+.logoFundador{
+  object-fit: cover;
+  width: 230px;
+}
+
+.meioDeContato {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.ml-3 {
+  margin-left: 3px;
+}
+
+.mt-9 {
+  margin-top: 9rem !important;
+}
+
+.contatosTelEmail {
+  font-size: 30px;
+  margin-top: -7px;
+  margin-right: 9px;
+}
+
+.ml-35 {
+  margin-left: 35%;;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
