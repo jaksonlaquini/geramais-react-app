@@ -1,7 +1,8 @@
 import React from 'react';
 import Slider from 'infinite-react-carousel';
 import banner1 from './../../img/banner/banner1.jpeg';
-import banner2 from './../../img/logo.png';
+import banner2 from './../../img/banner/banner2.jpeg';
+import banner3 from './../../img/banner/painel.jpg';
 
 
 const SimpleSlider = () => {
@@ -19,6 +20,9 @@ const SimpleSlider = () => {
       </div>
       <div>
         <img className="w-100" src={banner1} alt="" />
+      </div>
+      <div>
+        <img className="w-100" src={banner3} alt="" />
       </div>
     </Slider>
   );

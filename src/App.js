@@ -1,15 +1,11 @@
 import React from 'react';
 import './index.css'
 import './vendor/fontawesome-free/css/all.min.css';
+// import 'jquery';
+// import 'bootstrap/dist/js/bootstrap';
+// import './js/freelancer.min.js';
 import './css/freelancer.min.css';
 import logo from './img/logo.png';
-import banner1 from './img/banner1.jpeg';
-// import './scss/freelancer.scss';
-// import './vendor/jquery/jquery.min.js';
-// import './vendor/bootstrap/js/bootstrap.bundle.min.js';
-// import './vendor/jquery-easing/jquery.easing.min.js';
-// import './js/freelancer.min.js';
-// import QuemSomos from './pages/quemSomos';
 import Contato from './pages/contato';
 import QuemSomos from './pages/quemSomos';
 import Servico from './pages/servico'
@@ -20,8 +16,19 @@ import { Button } from 'react-bootstrap';
 import ModalFundador from './pages/modal';
 
 function App() {
-
+  
   const [modalShow, setModalShow] = React.useState(false);
+  let classNameMenu = 'collapse navbar-collapse';
+  // handleClick = () => {
+  //   console.log('this is:', this);
+  //   classNameMenu += ' show';
+  // }
+  function handleClick() {
+    debugger;
+    // e.preventDefault();
+    // classNameMenu += ' show';
+  }
+  
   return (
     <>
       <script src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -35,10 +42,7 @@ function App() {
 
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
       <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-
-      <body id="page-top">
-
-        <nav className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <nav className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
           <div className="container">
             <a className="navbar-brand js-scroll-trigger" href="#page-top">
               <img className="logo" src={logo} alt="" href="" />
@@ -72,32 +76,41 @@ function App() {
             </div>
           </div>
         </nav>
-        <header className="page-section mt-35">
+      <div id="page-top" className="mtBanner mbBanner">
+        <section className="page-section">
           <SimpleSlider />
-          {/* <img className="w-100" src={banner1} alt=""/> */}
-        </header>
-        <section className="page-section bg-primary text-white mb-0 mt-5" id="quemsomos">
-          < QuemSomos />
-          <div className="text-center mt-4">
-            <Button variant="primary" onClick={() => setModalShow(true)}>
-              <a className="btn btn-xl borderBtnFundador">
-                CEO E FUNDADOR
-              </a>
-            </Button>
-          </div>
-
-
         </section>
-        <section className="page-section" id="servico">
+      </div>
+    
+        <div id="quemsomos" className="section-margin">
+          <section className="page-section bg-primary text-white" >
+            < QuemSomos />
+            <div className="text-center mt-4">
+              <Button variant="primary" onClick={() => setModalShow(true)}>
+                <a className="btn btn-xl borderBtnFundador">
+                  CEO E FUNDADOR
+              </a>
+              </Button>
+            </div>
+
+
+          </section>
+        </div>
+      <div id="servico" className="section-margin"> 
+        <section className="page-section" >
           <Servico />
         </section>
-        <section className="page-section bg-primary text-white mb-0 mt-5" id="comoFunciona">
+      </div>
+      <div id="comoFunciona" className="section-margin">
+        <section className="page-section bg-primary text-white" >
           <ComoFunciona />
         </section>
-        <section className="page-section" id="contato">
+      </div>
+      <div id="contato" className="section-margin">
+        <section className="page-section">
           <Contato />
         </section>
-
+      </div>
 
         <footer className="footer text-center">
           <div className="meioDeContato">
@@ -206,20 +219,7 @@ function App() {
             </div>
           </div>
         </div>
-
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <script src="js/jqBootstrapValidation.js"></script>
-        <script src="js/contact_me.js"></script>
-
-        <script src="js/freelancer.min.js"></script>
-      </body>
     </>
-
-
   );
 }
 

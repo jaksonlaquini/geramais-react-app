@@ -7,14 +7,8 @@ class Contato extends Component {
         return (
             <>
             <div className="container">
-                <h3 className="page-section-heading text-center text-uppercase text-secondary mb-0">Contato</h3>
-                {/* <div className="divider-custom">
-                    <div className="divider-custom-line"></div>
-                    <div className="divider-custom-icon">
-                        <i className="fas fa-star"></i>
-                    </div>
-                    <div className="divider-custom-line"></div>
-                </div> */}
+
+                <h3 className="text-center text-uppercase text-secondary">Contato</h3>
                 <div className="row">
                     <div className="col-lg-8 mx-auto">
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
