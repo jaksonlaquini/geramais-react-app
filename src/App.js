@@ -11,6 +11,7 @@ import QuemSomos from './pages/quemSomos';
 import Servico from './pages/servico'
 import ComoFunciona from './pages/comoFunciona'
 import SimpleSlider from './pages/slide'
+import Projeto from './pages/projetos'
 
 import { Button } from 'react-bootstrap';
 import ModalFundador from './pages/modal';
@@ -18,16 +19,6 @@ import ModalFundador from './pages/modal';
 function App() {
   
   const [modalShow, setModalShow] = React.useState(false);
-  let classNameMenu = 'collapse navbar-collapse';
-  // handleClick = () => {
-  //   console.log('this is:', this);
-  //   classNameMenu += ' show';
-  // }
-  function handleClick() {
-    debugger;
-    // e.preventDefault();
-    // classNameMenu += ' show';
-  }
   
   return (
     <>
@@ -55,7 +46,7 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item mx-0 mx-lg-1">
-                  <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Projetos</a>
+                  <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#projetos">Projetos</a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
                   <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#quemsomos">Quem somos</a>
@@ -96,6 +87,11 @@ function App() {
 
           </section>
         </div>
+        <div id="projetos" className="section-margin"> 
+        <section className="page-section" >
+          <Projeto />
+        </section>
+      </div>
       <div id="servico" className="section-margin"> 
         <section className="page-section" >
           <Servico />
