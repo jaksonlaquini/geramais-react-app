@@ -10,7 +10,9 @@ import Contato from './pages/contato';
 import QuemSomos from './pages/quemSomos';
 import Servico from './pages/servico'
 import ComoFunciona from './pages/comoFunciona'
-import SimpleSlider from './pages/slide'
+import ControlledCarousel from './pages/carousel'
+import Slider from './pages/slide'
+
 import Projeto from './pages/projetos'
 
 import { Button } from 'react-bootstrap';
@@ -69,10 +71,14 @@ function App() {
         </nav>
       <div id="page-top" className="mtBanner mbBanner">
         <section className="page-section">
-          <SimpleSlider />
+        <ControlledCarousel />
         </section>
       </div>
-    
+      <div id="projetos" className="section-margin">
+        <section className="page-section" >
+          <Projeto />
+        </section>
+      </div>
         <div id="quemsomos" className="section-margin">
           <section className="page-section bg-primary text-white" >
             < QuemSomos />
@@ -87,11 +93,16 @@ function App() {
 
           </section>
         </div>
-        <div id="projetos" className="section-margin"> 
+        {/* <div id="servico" className="section-margin"> 
         <section className="page-section" >
-          <Projeto />
+          <div className="container">
+            <h3 className="text-center text-uppercase text-secondary">Serviços</h3>
+            <hr></hr>
+            </div>
+            <Slider />
+        
         </section>
-      </div>
+      </div> */}
       <div id="servico" className="section-margin"> 
         <section className="page-section" >
           <Servico />
