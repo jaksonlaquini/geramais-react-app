@@ -86,3 +86,11 @@ code {
 .projetoImg7 {
   height: 191px;
 }
+
+.p-40 {
+  padding: 40px !important;
+}
+
+.text-align-center {
+  text-align: center;
+}

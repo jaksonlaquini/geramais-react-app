@@ -1,9 +1,6 @@
 import React from 'react';
 import './index.css'
 import './vendor/fontawesome-free/css/all.min.css';
-// import 'jquery';
-// import 'bootstrap/dist/js/bootstrap';
-// import './js/freelancer.min.js';
 import './css/freelancer.min.css';
 import logo from './img/logo.png';
 import Contato from './pages/contato';
@@ -11,16 +8,18 @@ import QuemSomos from './pages/quemSomos';
 import Servico from './pages/servico'
 import ComoFunciona from './pages/comoFunciona'
 import ControlledCarousel from './pages/carousel'
-import Slider from './pages/slide'
+// import Slider from './pages/slide'
 
 import Projeto from './pages/projetos'
 
 import { Button } from 'react-bootstrap';
 import ModalFundador from './pages/modal';
+import ModalOrcamento from './pages/orcamento'
 
 function App() {
   
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalOrcamentoShow, setModalOrcamentoShow] = React.useState(false);
   
   return (
     <>
@@ -60,7 +59,7 @@ function App() {
                   <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#comoFunciona">Como Funciona</a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
-                  <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#orcamento">Orçamento</a>
+                  <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onClick={() => setModalOrcamentoShow(true)}>Orçamento</a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
                   <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contato">Contato</a>
@@ -188,8 +187,12 @@ function App() {
           show={modalShow}
           onHide={() => setModalShow(false)}
         />
+         <ModalOrcamento
+          show={modalOrcamentoShow}
+          onHide={() => setModalOrcamentoShow(false)}
+        />
         {/* Modal */}
-        <div className="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+        {/* <div className="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
           <div className="modal-dialog modal-xl" role="document">
             <div className="modal-content">
               <button type="button" className="close" data-dismiss="modal" aria-label="Close">
@@ -225,7 +228,7 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
     </>
   );
 }
