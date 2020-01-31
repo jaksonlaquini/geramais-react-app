@@ -83,8 +83,10 @@ code {
   height: 191px;
 }
 
-.projetoImg7 {
-  height: 191px;
+.icone {
+  height: 100px !important;
+  width: 101px !important;
+  cursor:pointer;
 }
 
 .p-40 {
@@ -93,4 +95,14 @@ code {
 
 .text-align-center {
   text-align: center;
+}
+
+.corpoServico {
+  border: 0px solid rgba(148, 148, 148, 1);
+  background-color: rgba(247, 247, 247, 1);
+  border-radius: 0;
+}
+
+.fontSizeIconesServicos {
+  font-size: 1.3rem !important;
 }
