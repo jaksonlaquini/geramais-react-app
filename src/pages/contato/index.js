@@ -8,6 +8,7 @@ class Contato extends Component {
     constructor() {
         super();
         this.state ={nome: '', email: '', telefone: '', mensagem: ''}
+        this.setState = this.setState.bind(this);
         this.enviarForm = this.enviarForm.bind(this);
         this.setNome =  this.setNome.bind(this);
         this.setEmail =  this.setEmail.bind(this);
@@ -17,20 +18,37 @@ class Contato extends Component {
 
     enviarForm(evento) {
         evento.preventDefault();
-        $.ajax({
-            url:'',
-            contentType:'application/json',
-            dataType: 'json',
-            type: 'post',
-            data: JSON.stringify({nome: this.state.nome, email: this.state.email, telefone: this.state.telefone, mensagem: this.state.mensagem}),
-            success: function(resposta) {
-                console.log("enviado com sucesso");
-            } , 
-            error: function(resposta) {
-                console.log("error");
-            }
-        });
+        if(this.setState && this.state.email && this.state.nome && this.state.telefone && this.state.mensagem) {
+            $.ajax({
+                url:'https://geramaisengenhariaapi.herokuapp.com/email/enviar',
+                headers:"{'Access-Control-Allow-Origin', '*'}",
+                contentType:'application/json',
+                dataType: 'json',
+                type: 'post', 
+                data: JSON.stringify({nome: this.state.nome, email: this.state.email, telefone: this.state.telefone, mensagem: this.state.mensagem}),
+                success: function (resposta) {
+                    console.log("enviado com sucesso");
+                    $('#success').html("<div class='alert alert-success'>");
+                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-success')
+                        .append("<strong>Email enviado com sucesso! </strong>");
+                    $('#success > .alert-success')
+                        .append('</div>');
 
+                    $('#contactForm').trigger("reset");
+                },
+                error: function (resposta) {
+                    $('#success').html("<div class='alert alert-danger'>");
+                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-danger').append($("<strong>").text("Desculpe " + this.state.nome + ", seu email não pode ser enviado. Por favor tente mais tarde!"));
+                    $('#success > .alert-danger').append('</div>');
+                    $('#contactForm').trigger("reset");
+                }
+                })
+        }
+      
     }
 
     setNome(evento) {
@@ -49,19 +67,10 @@ class Contato extends Component {
         this.setState({mensagem: evento.target.value});
     }
 
-    // componentDidMount() {
-    //     $.ajax({
-    //         url:"",
-    //         dataType: 'json',
-    //         success: 
-    //     });
-    // }
-
     render() {
         return (
             <>
             <div className="container">
-
                 <h3 className="text-center text-uppercase text-secondary">Contato</h3>
                 <div className="row">
                     <div className="col-lg-8 mx-auto">

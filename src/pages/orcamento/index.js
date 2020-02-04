@@ -63,7 +63,6 @@ function ModalOrcamento(props) {
                     </div>
                   </form>
       
-
       </Modal.Body>
       {/* <Modal.Footer className="p-20">
         <div class="row justify-content-center w-100">
