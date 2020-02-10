@@ -92,16 +92,6 @@ function App() {
 
           </section>
         </div>
-        {/* <div id="servico" className="section-margin"> 
-        <section className="page-section" >
-          <div className="container">
-            <h3 className="text-center text-uppercase text-secondary">Serviços</h3>
-            <hr></hr>
-            </div>
-            <Slider />
-        
-        </section>
-      </div> */}
       <div id="servico" className="section-margin"> 
         <section className="page-section" >
           <Servico />
@@ -155,13 +145,12 @@ function App() {
                     </a>
                     <span>(27) 99971-5445</span>
                   </div>
-
                   <div className="row">
-                    <a href="mailto:jaksonslaquini@gmail.com" target="_self" data-content="jaksonslaquini@gmail.com" data-type="mail">
+                    <a href="mailto:contato@geramaisengenharia.com.br" target="_self" data-content="contato@geramaisengenharia.com.br" data-type="mail">
                       <a className="contatosTelEmail">
                         <i className="fa fa-envelope"></i>
                       </a>
-                      <span>contato@geramaisengenharia.com</span>
+                      <span>contato@geramaisengenharia.com.br</span>
                     </a>
                   </div>
                 </div>
