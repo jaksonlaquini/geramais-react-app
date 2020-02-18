@@ -24,7 +24,7 @@ class Servico extends Component {
 
     constructor() {
         super();
-        this.state = {modalShow: false, icone: 0};
+        this.state = {modalShow: false, icone: 0, servico: ''};
     }
    
   render() {
@@ -35,45 +35,46 @@ class Servico extends Component {
             <div className="row">
                
                 <div className="col-lg-3 ml-auto text-center">
-                    <img className="icone" src={icone6} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico6})}/>
+                    <img className="icone" src={icone6} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico6, servico: "Projetos elétricos"})}/>
                     <h3 className="fontSizeIconesServicos">Projetos elétricos</h3>
                     <hr></hr>
                 </div>
                 <div className="col-lg-3 ml-auto text-center">
-                    <img className="icone" src={icone2} title="Click e saiba mais" onClick={() => this.setState({modalShow: true , icone: servico2})}/>
+                    <img className="icone" src={icone2} title="Click e saiba mais" onClick={() => this.setState({modalShow: true , icone: servico2, servico: "Consultoria"})}/>
                     <h3 className="fontSizeIconesServicos">Consultoria</h3>
                     <hr></hr>
                 </div>
                 <div className="col-lg-3 ml-auto text-center">
-                    <img className="icone" src={icone3} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico3})}/>
+                    <img className="icone" src={icone3} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico3, servico: "Vistoria"})}/>
                     <h3 className="fontSizeIconesServicos">Vistoria</h3>
                     <hr></hr>
                 </div>
                 
                 <div className="col-lg-3 ml-auto text-center">
-                    <img className="icone" src={icone7} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico7})}/>
+                    <img className="icone" src={icone7} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico7, servico: "Energia solar"})}/>
                     <h3 className="fontSizeIconesServicos">Energia solar</h3>
                     <hr></hr>
                 </div>
             </div>
             <div className="row">
                 <div className="col-lg-3 ml-auto text-center">
-                    <img className="icone" src={icone5} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico5})}/>
+                    <img className="icone" src={icone5} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico5, servico: "Laudos técnicos"})}/>
                     <h3 className="fontSizeIconesServicos">Laudos técnicos</h3>
                     <hr></hr>
                 </div>
                 <div className="col-lg-4 ml-auto text-center">
-                    <img className="icone" src={icone1} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico1})}/>
+                    <img className="icone" src={icone1} title="Click e saiba mais"  onClick={() => this.setState({modalShow: true , icone: servico1, servico: "Projeto técnico SPDA"})}/>
                     <h3 className="fontSizeIconesServicos">Projeto técnico SPDA</h3>
                     <hr></hr>
                 </div>
                 <div className="col-lg-5 ml-auto text-center">
-                    <img className="icone" src={icone4} title="Click e saiba mais" onClick={() => this.setState({modalShow: true , icone: servico4})}/>
-                    <h3 className="fontSizeIconesServicos">Otimização do consumo de energia </h3>
+                    <img className="icone" src={icone4} title="Click e saiba mais" onClick={() => this.setState({modalShow: true , icone: servico4, servico: "Otimização do consumo de energia"})}/>
+                    <h3 className="fontSizeIconesServicos">Otimização do consumo de energia</h3>
                     <hr></hr>
                 </div>
             </div>
              <ModalServico icone={this.state.icone}
+                servico={this.state.servico}
                 show={this.state.modalShow}
                 onHide={() => this.setState({modalShow:false})}
             />

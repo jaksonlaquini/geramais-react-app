@@ -7,9 +7,9 @@ import './../../css/freelancer.min.css';
 import $ from 'jquery';
 
 class ModalOrcamento extends Component {
-  constructor() {
-    super();
-    this.state = { nome: '', email: '', telefone: '', endereco: '', mensagem: '', loading: false }
+  constructor(props) {
+    super(props);
+    this.state = { nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: 'Não Informamdo', anexo: null, loading: false }
     this.setState = this.setState.bind(this);
     this.enviarForm = this.enviarForm.bind(this);
     this.setNome = this.setNome.bind(this);
@@ -17,6 +17,15 @@ class ModalOrcamento extends Component {
     this.setTelefone = this.setTelefone.bind(this);
     this.setEndereco = this.setEndereco.bind(this);
     this.setMensagem = this.setMensagem.bind(this);
+    this.setServico = this.setServico.bind(this);
+    this.setLimpar = this.setLimpar.bind(this);
+    this.setAnexo = this.setAnexo.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.servico) {
+      this.setState({ servico: this.props.servico });
+    }
   }
 
   enviarForm(evento) {
@@ -24,15 +33,14 @@ class ModalOrcamento extends Component {
     if (this.setState && this.state.email && this.state.nome && this.state.telefone && this.state.endereco && this.state.mensagem) {
       this.setState({ loading: true });
       $.ajax({
-        url: 'https://geramaisengenhariaapi.herokuapp.com/email/enviarOrcamento',
+        url: 'http://localhost:3001/email/enviarOrcamento',
         headers: "{'Access-Control-Allow-Origin', '*'}",
         contentType: 'application/json',
         dataType: 'json',
         type: 'post',
-        data: JSON.stringify({ nome: this.state.nome, email: this.state.email, telefone: this.state.telefone, endereco:this.state.endereco, mensagem: this.state.mensagem }),
+        data: JSON.stringify({ nome: this.state.nome, email: this.state.email, telefone: this.state.telefone, endereco: this.state.endereco, mensagem: this.state.mensagem, servico: this.state.servico, anexo: this.state.anexo }),
         success: function (resposta) {
-          this.setState({ nome: '', email: '', telefone: '', endereco: '', mensagem: '', loading: false });
-          console.log("enviado com sucesso");
+          this.setState({ nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: "Não Informado", loading: false });
           $('#mensagemOrcamento').html("<div class='alert alert-success'>");
           $('#mensagemOrcamento > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
@@ -55,13 +63,12 @@ class ModalOrcamento extends Component {
         }.bind(this)
       })
     } else {
-      
+
       $('#mensagemOrcamento').html("<div class='alert alert-danger'>");
       $('#mensagemOrcamento > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
         .append("</button>");
-      $('#mensagemOrcamento > .alert-danger').append($("<strong>").text("Informe todos os campos!"));
+      $('#mensagemOrcamento > .alert-danger').append($("<strong>").text("Informe todos os campos obrigatórios! (*)"));
       $('#mensagemOrcamento > .alert-danger').append('</div>');
-      $('#orcamentoForm').trigger("reset");
     }
   }
 
@@ -85,71 +92,106 @@ class ModalOrcamento extends Component {
     this.setState({ mensagem: evento.target.value });
   }
 
+  setServico(evento) {
+    this.setState({ servico: evento.target.value });
+  }
+
+  setAnexo(selectorFiles: FileList) {
+    debugger
+    this.setState({ anexo: selectorFiles[0]});
+  }
+
+  setLimpar() {
+    this.setState({ nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: "Não Informado", loading: false });
+  }
+
   render() {
     return (
       <>
-       
-      <Modal
-        {...this.props}
-        size="lg"
-        aria-labelledby="example-modal-sizes-title-lg"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="example-modal-sizes-title-lg">
-            Orçamento
+        <Modal
+          {...this.props}
+          size="lg"
+          aria-labelledby="example-modal-sizes-title-lg"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="example-modal-sizes-title-lg">
+              Orçamento
           <hr className="w-100"></hr>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="pt-0 p-40">
-        <Loading
-      show={this.state.loading} />
-          <form name="sentMessageOrcamento" id="orcamentoForm" onSubmit={this.enviarForm} novalidate="novalidate">
-            <div className="control-group">
-              <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Nome</label>
-                <input className="form-control" id="name" type="text" placeholder="Nome" required="required" data-validation-required-message="Por favor, informe seu nome."
-                value={this.state.nome} onChange={this.setNome} />
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="pt-0 p-40">
+            <Loading
+              show={this.state.loading} />
+            <form name="sentMessageOrcamento" id="orcamentoForm" onSubmit={this.enviarForm} >
+              <div className="control-group">
+                <div className="form-group mb-0 pb-2">
+                  <label>Informe o serviço que deseja solicitar.</label>
+                  <select title="Serviço" onChange={this.setServico} value={this.state.servico} className="form-control fontSizeIconesServicos" id="sel1">
+                    <option className="controls" value="Não Informado">Selecione um serviço</option>
+                    <option value="Consultoria">Consultoria</option>
+                    <option value="Energia Solar">Energia Solar</option>
+                    <option value="Laudos técnicos">Laudos técnicos</option>
+                    <option value="Otimização do consumo de energi">Otimização do consumo de energia</option>
+                    <option value="Projetos elétricos">Projetos elétricos</option>
+                    <option value="Projeto técnico SPDA">Projeto técnico SPDA</option>
+                    <option value="Vistoria">Vistoria</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div className="control-group">
-              <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Email</label>
-                <input className="form-control" id="email" type="email" placeholder="Email" required="required" data-validation-required-message="Por favor, informe seu email."
-                value={this.state.email} onChange={this.setEmail} />
+              <div className="control-group">
+                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Nome*</label>
+                  <input className="form-control" id="name" type="text" placeholder="Nome*" required="required" data-validation-required-message="Por favor, informe seu nome."
+                    value={this.state.nome} onChange={this.setNome} />
+                </div>
               </div>
-            </div>
-            <div className="control-group">
-              <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Telefone</label>
-                <input className="form-control" id="phone" type="tel" placeholder="Telefone" required="required" data-validation-required-message="Por favor, informe seu telefone." 
-                 value={this.state.telefone} onChange={this.setTelefone}/>
+              <div className="control-group">
+                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Email</label>
+                  <input className="form-control" id="email" type="email" placeholder="Email*" required="required" data-validation-required-message="Por favor, informe seu email."
+                    value={this.state.email} onChange={this.setEmail} />
+                </div>
               </div>
-            </div>
+              <div className="control-group">
+                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Telefone</label>
+                  <input className="form-control" id="phone" type="tel" placeholder="Telefone*" required="required" data-validation-required-message="Por favor, informe seu telefone."
+                    value={this.state.telefone} onChange={this.setTelefone} />
+                </div>
+              </div>
 
-            <div className="control-group">
-              <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Endereço</label>
-                <input className="form-control" id="name" type="text" placeholder="Endereco" required="required" data-validation-required-message="Por favor, informe seu email."
-                 value={this.state.endereco} onChange={this.setEndereco}/>
+              <div className="control-group">
+                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Endereço</label>
+                  <input className="form-control" id="name" type="text" placeholder="Endereco*" required="required" data-validation-required-message="Por favor, informe seu email."
+                    value={this.state.endereco} onChange={this.setEndereco} />
+                </div>
               </div>
-            </div>
-            <div className="control-group">
-              <div className="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Mensagem</label>
-                <textarea className="form-control" id="message" rows="5" placeholder="Mensagem" required="required" data-validation-required-message="Por favor, informe uma mensagem"
-                value={this.state.mensagem} onChange={this.setMensagem}></textarea>
+              
+              <div className="control-group">
+                <div className="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>Mensagem</label>
+                  <textarea className="form-control" id="message" rows="5" placeholder="Mensagem*" required="required" data-validation-required-message="Por favor, informe uma mensagem"
+                    value={this.state.mensagem} onChange={this.setMensagem}></textarea>
+                </div>
               </div>
-            </div>
-            <br></br>
-            <div id="mensagemOrcamento"></div>
-            <div className="form-group text-align-center" >
-              <button type="submit" className="btn btn-primary btn-xl" id="sendMessageButton">Enviar</button>
-            </div>
-          </form>
-
-        </Modal.Body>
-      </Modal>
+              <div className="control-group">
+                <div class="form-group">
+                  <label for="exampleFormControlFile1"><b>Anexe uma cópia da sua conta de luz.</b></label>
+                  <input type="file" className="form-control-file" onChange={ (e) => this.setAnexo(e.target.files) } id="exampleFormControlFile1"></input>
+                </div>
+              </div>
+              <br></br>
+              <div id="mensagemOrcamento"></div>
+              <div className="form-group text-align-center" >
+                <button type="submit" className="btn btn-primary btn-xl mr-10" id="sendMessageButton">Enviar</button>
+                <button type="button" className="btn btn-light btn-xl" onClick={this.setLimpar}>Limpar</button>
+              </div>
+            </form>
+          </Modal.Body>
+        </Modal>
       </>
     );
   }

@@ -36,7 +36,7 @@ function ModalFundador(props) {
       </Modal.Body>
       <Modal.Footer className="pt-0">
         <div class="row justify-content-center w-100">
-          <button className="btn btn-primary" onClick={props.onHide} data-dismiss="modal">
+          <button className="btn btn-danger" onClick={props.onHide} data-dismiss="modal">
             <i className="fas fa-times fa-fw"></i>
             Fechar
           </button>
