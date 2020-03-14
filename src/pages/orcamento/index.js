@@ -9,7 +9,7 @@ import $ from 'jquery';
 class ModalOrcamento extends Component {
   constructor(props) {
     super(props);
-    this.state = { nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: 'Não Informamdo', anexo: null, loading: false }
+    this.state = { nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: 'Não Informado', anexo: null, loading: false }
     this.setState = this.setState.bind(this);
     this.enviarForm = this.enviarForm.bind(this);
     this.setNome = this.setNome.bind(this);
@@ -29,18 +29,30 @@ class ModalOrcamento extends Component {
   }
 
   enviarForm(evento) {
-    evento.preventDefault();
+     evento.preventDefault();
     if (this.setState && this.state.email && this.state.nome && this.state.telefone && this.state.endereco && this.state.mensagem) {
       this.setState({ loading: true });
+        
+      const formData = new FormData();   
+      formData.append('servico', this.state.servico);
+      formData.append('nome', this.state.nome);
+      formData.append('email', this.state.email);
+      formData.append('telefone', this.state.telefone);
+      formData.append('endereco', this.state.endereco);
+      formData.append('mensagem', this.state.mensagem);
+      formData.append('anexo', this.state.anexo);
+
       $.ajax({
-        url: 'http://localhost:3001/email/enviarOrcamento',
-        headers: "{'Access-Control-Allow-Origin', '*'}",
-        contentType: 'application/json',
-        dataType: 'json',
-        type: 'post',
-        data: JSON.stringify({ nome: this.state.nome, email: this.state.email, telefone: this.state.telefone, endereco: this.state.endereco, mensagem: this.state.mensagem, servico: this.state.servico, anexo: this.state.anexo }),
-        success: function (resposta) {
-          this.setState({ nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: "Não Informado", loading: false });
+        url: 'https://geramaisengenhariaapi.herokuapp.com/email/enviarorcamento',
+        headers: "{'Content-Type': 'multipart/form-data', 'Access-Control-Allow-Origin', '*'}",
+        type : "POST",
+      data : formData,
+      processData : false,
+      contentType : false,
+      cache : false,
+      timeout : 600000,
+        success: function (data) {
+          this.setState({ nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: "Não Informado", loading: false , anexo: ''});
           $('#mensagemOrcamento').html("<div class='alert alert-success'>");
           $('#mensagemOrcamento > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
@@ -51,7 +63,7 @@ class ModalOrcamento extends Component {
 
           $('#orcamentoForm').trigger("reset");
         }.bind(this),
-        error: function (resposta) {
+        error: function (data) {
           this.setState({ loading: false });
 
           $('#mensagemOrcamento').html("<div class='alert alert-danger'>");
@@ -61,7 +73,7 @@ class ModalOrcamento extends Component {
           $('#mensagemOrcamento > .alert-danger').append('</div>');
           $('#orcamentoForm').trigger("reset");
         }.bind(this)
-      })
+      });
     } else {
 
       $('#mensagemOrcamento').html("<div class='alert alert-danger'>");
@@ -96,13 +108,12 @@ class ModalOrcamento extends Component {
     this.setState({ servico: evento.target.value });
   }
 
-  setAnexo(selectorFiles: FileList) {
-    debugger
-    this.setState({ anexo: selectorFiles[0]});
+  setAnexo(arquivo) {
+    this.setState({ anexo: arquivo[0]});
   }
 
   setLimpar() {
-    this.setState({ nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: "Não Informado", loading: false });
+    this.setState({ nome: '', email: '', telefone: '', endereco: '', mensagem: '', servico: "Não Informado", loading: false , anexo:''});
   }
 
   render() {
@@ -123,7 +134,7 @@ class ModalOrcamento extends Component {
           <Modal.Body className="pt-0 p-40">
             <Loading
               show={this.state.loading} />
-            <form name="sentMessageOrcamento" id="orcamentoForm" onSubmit={this.enviarForm} >
+            <form name="sentMessageOrcamento" id="orcamentoForm"  method="post" onSubmit={this.enviarForm} >
               <div className="control-group">
                 <div className="form-group mb-0 pb-2">
                   <label>Informe o serviço que deseja solicitar.</label>
@@ -186,7 +197,7 @@ class ModalOrcamento extends Component {
               <br></br>
               <div id="mensagemOrcamento"></div>
               <div className="form-group text-align-center" >
-                <button type="submit" className="btn btn-primary btn-xl mr-10" id="sendMessageButton">Enviar</button>
+                <button type="submit" className="btn btn-primary btn-xl mr-10" >Enviar</button>
                 <button type="button" className="btn btn-light btn-xl" onClick={this.setLimpar}>Limpar</button>
               </div>
             </form>
