@@ -39,5 +39,4 @@ function ComoFunciona() {
     );
 }
 
-
 export default ComoFunciona;
