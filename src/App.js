@@ -8,6 +8,8 @@ import QuemSomos from './pages/quemSomos';
 import Servico from './pages/servico'
 import ComoFunciona from './pages/comoFunciona'
 import ControlledCarousel from './pages/carousel'
+import Video from './pages/video'
+
 // import Slider from './pages/slide'
 
 import Projeto from './pages/projetos'
@@ -70,7 +72,8 @@ function App() {
         </nav>
       <div id="page-top" className="mtBanner mbBanner">
         <section className="page-section">
-        <ControlledCarousel />
+        <Video></Video>
+        {/* <ControlledCarousel /> */}
         </section>
       </div>
       <div id="projetos" className="section-margin">
