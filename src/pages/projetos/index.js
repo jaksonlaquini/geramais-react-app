@@ -10,6 +10,7 @@ import projeto8 from './../../img/projetos/8.png';
 import projeto9 from './../../img/projetos/9.png';
 import projeto10 from './../../img/projetos/10.png';
 import projeto11 from './../../img/projetos/11.png';
+import projeto12 from './../../img/projetos/12.png';
 
 import './../../index.css'
 
@@ -60,7 +61,7 @@ class Projetos extends Component {
                         <img className="w-100" src={projeto11}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        
+                        <img className="w-100" src={projeto12}/>
                     </div>
                 </div>
           </div>   
