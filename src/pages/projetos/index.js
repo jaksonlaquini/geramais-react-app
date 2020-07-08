@@ -11,10 +11,18 @@ import projeto9 from './../../img/projetos/9.png';
 import projeto10 from './../../img/projetos/10.png';
 import projeto11 from './../../img/projetos/11.png';
 import projeto12 from './../../img/projetos/12.png';
+import projeto13 from './../../img/projetos/13.png';
+import projeto14 from './../../img/projetos/14.png';
+
+import ModalFotoAmpla from './../../pages/projetos/modal';
 
 import './../../index.css'
 
 class Projetos extends Component {
+    constructor() {
+        super();
+        this.state = {modalShow: false, icone: 0};
+    }
     render() {
         return (
             <div className="container">
@@ -22,48 +30,65 @@ class Projetos extends Component {
             <hr></hr>
                 <div className="row">
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto1}/>
+                        <img className="w-100" src={projeto1} onClick={() => this.setState({modalShow: true , icone: projeto1})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto2}/>
+                        <img className="w-100" src={projeto2} onClick={() => this.setState({modalShow: true , icone: projeto2})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto3}/>
+                        <img className="w-100" src={projeto3} onClick={() => this.setState({modalShow: true , icone: projeto3})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto4}/>
+                        <img className="w-100" src={projeto4} onClick={() => this.setState({modalShow: true , icone: projeto4})}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto5}/>
+                        <img className="w-100" src={projeto5} onClick={() => this.setState({modalShow: true , icone: projeto5})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto6} />
+                        <img className="w-100" src={projeto6} onClick={() => this.setState({modalShow: true , icone: projeto6})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto7}/>
+                        <img className="w-100" src={projeto7} onClick={() => this.setState({modalShow: true , icone: projeto7})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto8}/>
+                        <img className="w-100" src={projeto8} onClick={() => this.setState({modalShow: true , icone: projeto8})}/>
                     </div>
                 </div>
 
                 <div className="row">
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto9}/>
+                        <img className="w-100" src={projeto9} onClick={() => this.setState({modalShow: true , icone: projeto9})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto10} />
+                        <img className="w-100" src={projeto10} onClick={() => this.setState({modalShow: true , icone: projeto10})} />
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto11}/>
+                        <img className="w-100" src={projeto11} onClick={() => this.setState({modalShow: true , icone: projeto11})}/>
                     </div>
                     <div className="col-lg-3 ml-auto mt-5">
-                        <img className="w-100" src={projeto12}/>
+                        <img className="w-100" src={projeto12} onClick={() => this.setState({modalShow: true , icone: projeto12})}/>
                     </div>
                 </div>
+                <div className="row">
+                    <div className="col-lg-3 ml-auto mt-5">
+                        <img className="w-100" src={projeto13} onClick={() => this.setState({modalShow: true , icone: projeto13})}/>
+                    </div>
+                    <div className="col-lg-3 ml-auto mt-5">
+                        <img className="w-100" src={projeto14} onClick={() => this.setState({modalShow: true , icone: projeto14})}/>
+                    </div>
+                    <div className="col-lg-3 ml-auto mt-5">
+                    </div>
+                    <div className="col-lg-3 ml-auto mt-5">
+                    </div>
+                </div>
+
+                <ModalFotoAmpla icone={this.state.icone}
+                show={this.state.modalShow}
+                onHide={() => this.setState({modalShow:false})}
+            />
           </div>   
         );
     }

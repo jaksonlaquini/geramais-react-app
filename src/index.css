@@ -119,3 +119,7 @@ code {
   height: 100%;
   z-index: 999999999999;
 }
+
+.borderRadius-10 {
+  border-radius: 10px;
+}
