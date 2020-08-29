@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css'
 import './vendor/fontawesome-free/css/all.min.css';
 import './css/freelancer.min.css';
+import './App.css'
 import logo from './img/logo.png';
 import Contato from './pages/contato';
 import QuemSomos from './pages/quemSomos';
@@ -95,16 +96,19 @@ function App() {
 
           </section>
         </div>
+
       <div id="servico" className="section-margin"> 
         <section className="page-section" >
           <Servico />
         </section>
       </div>
+
       <div id="comoFunciona" className="section-margin">
         <section className="page-section bg-primary text-white" >
           <ComoFunciona />
         </section>
       </div>
+
       <div id="contato" className="section-margin">
         <section className="page-section">
           <Contato />
@@ -168,7 +172,7 @@ function App() {
         </section>
 
         {/* Scroll to Top Button (Only visible on small and extra-small screen sizes)  */}
-        <div className="scroll-to-top d-lg-none position-fixed ">
+        <div className="leftBotaoTopo scroll-to-top d-lg-none position-fixed">
           <a className="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
             <i className="fa fa-chevron-up"></i>
           </a>

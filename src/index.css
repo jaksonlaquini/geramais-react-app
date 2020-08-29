@@ -123,3 +123,7 @@ code {
 .borderRadius-10 {
   border-radius: 10px;
 }
+
+.pt-25 {
+  padding-top: 25px;
+}

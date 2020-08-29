@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.leftBotaoTopo {
+  left: 1rem !important;
+  z-index: 1042;
+  bottom: 1rem;
+}
+
