@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import banner1 from './../../img/banner/banner1.jpeg';
-import banner2 from './../../img/banner/banner2.jpeg';
-import banner3 from './../../img/banner/banner3.jpeg';
+import banner2 from './../../img/banner/banner2.png';
+import banner3 from './../../img/banner/banner3.png';
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);

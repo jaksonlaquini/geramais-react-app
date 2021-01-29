@@ -64,8 +64,11 @@ class Projetos extends Component {
 
                 { this.state.exibirTodos ?
                     <div className="row">
-                        <div className="col-lg-3 ml-auto mt-5">
+                        {/* <div className="col-lg-3 ml-auto mt-5">
                             <img className="w-100" src={projeto13} onClick={() => this.setState({modalShow: true , icone: projeto13})}/>
+                        </div> */}
+                        <div className="col-lg-3 ml-auto mt-5 text-center">
+                            <img className="w-100" src={projeto12} onClick={() => this.setState({modalShow: true , icone: projeto12})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-5">
                             <img className="w-100" src={projeto5} onClick={() => this.setState({modalShow: true , icone: projeto5})}/>
@@ -90,13 +93,13 @@ class Projetos extends Component {
                         <div className="col-lg-3 ml-auto mt-5">
                             <img className="w-100" src={projeto3} onClick={() => this.setState({modalShow: true , icone: projeto3})}/>
                         </div>
-                        <div className="col-lg-3 ml-auto mt-5">
+                        {/* <div className="col-lg-3 ml-auto mt-5">
                             <img className="w-100" src={projeto4} onClick={() => this.setState({modalShow: true , icone: projeto4})}/>
-                        </div>
+                        </div> */}
                     </div>
                 : ''}
 
-                { this.state.exibirTodos ?
+                {/* { this.state.exibirTodos ?
                   <div className="row">
                         <div className="col-lg-3 ml-auto mt-5 text-center">
                             <img className="w-100" src={projeto12} onClick={() => this.setState({modalShow: true , icone: projeto12})}/>
@@ -108,7 +111,7 @@ class Projetos extends Component {
                         <div className="col-lg-3 ml-auto mt-5 text-center">
                         </div>
                     </div>
-                : ''}
+                : ''} */}
 
                 { this.state.exibirTodos ?
                     <div className="w-100 text-center pt-25">

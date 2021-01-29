@@ -73,8 +73,8 @@ function App() {
         </nav>
       <div id="page-top" className="mtBanner mbBanner">
         <section className="page-section">
-        <Video></Video>
-        {/* <ControlledCarousel /> */}
+        {/* <Video></Video> */}
+        <ControlledCarousel />
         </section>
       </div>
       <div id="projetos" className="section-margin">
