@@ -18,6 +18,7 @@ import Projeto from './pages/projetos'
 import { Button } from 'react-bootstrap';
 import ModalFundador from './pages/modal';
 import ModalOrcamento from './pages/orcamento'
+import NossosProjetos from './pages/nossosProjetos';
 
 function App() {
   
@@ -79,7 +80,8 @@ function App() {
       </div>
       <div id="projetos" className="section-margin">
         <section className="page-section" >
-          <Projeto />
+          {/* <Projeto /> */}
+          <NossosProjetos/>
         </section>
       </div>
         <div id="quemsomos" className="section-margin">

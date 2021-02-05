@@ -71,6 +71,10 @@ code {
   padding-top: 95px;
 }
 
+.pt-60 {
+  padding-top: 60px;
+}
+
 .mbBanner {
   margin-bottom: -200px;
 }
@@ -126,4 +130,74 @@ code {
 
 .pt-25 {
   padding-top: 25px;
+}
+
+.residencial {
+  background-image: linear-gradient(0deg,rgba(11,60,107,.5),rgba(11,60,107,.5)),url(img/nossoProjetos/residencial.png);
+  background-repeat: no-repeat;
+  height: 400px;
+  background-size: cover;
+}
+
+.rural {
+  background-image: linear-gradient(0deg,rgba(11,60,107,.5),rgba(11,60,107,.5)),url(img/nossoProjetos/rural.png);
+  background-repeat: no-repeat;
+  height: 400px;
+  background-size: cover;
+}
+
+.comercial {
+  background-image: linear-gradient(0deg,rgba(11,60,107,.5),rgba(11,60,107,.5)),url(img/nossoProjetos/comercial.png);
+  background-repeat: no-repeat;
+  height: 400px;
+  background-size: cover;
+}
+
+.tituloCardsNossosProjetos {
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+a.but_st1.medium.blue:hover {
+  background-color: #117964;
+}
+
+a.but_st1.medium.blue {
+  background-color: #1abc9c;
+}
+a.but_st1.medium {
+  font-size: 16px;
+  padding: 15px 35px;
+}
+a.but_st1 {
+  padding: 0;
+  margin: 0 10px 10px 0;
+  border-radius: 50px;
+  color: #117964;
+  text-decoration: none;
+  background-color: #1abc9c;
+}
+a:hover {
+  color: #001526;
+  text-decoration: underline;
+}
+.textbutton, .txtbranco {
+  color: #fff!important;
+  font-weight: 700;
+}
+.blue, .green {
+  color: #117964;
+}
+a {
+  transition: all .3s ease-out 0s;
+}
+
+.min-h-100 {
+  min-height: 400px !important;
+}
+
+.p-3rem {
+  padding: 3rem 0;
 }
