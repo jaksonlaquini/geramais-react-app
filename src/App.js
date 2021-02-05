@@ -169,7 +169,7 @@ function App() {
 
         <section className="copyright py-4 text-center text-white">
           <div className="container">
-            <small>Copyright &copy;  geramaisengenharia 2020</small>
+          <small>Copyright &copy; 2021 geramaisengenharia - Todos direitos reservados </small>
           </div>
         </section>
 

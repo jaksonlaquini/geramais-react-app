@@ -72,6 +72,9 @@ class DetalheProjetos extends Component {
 
         if(!tipo) {
             tipo = 0;
+            this.setState({
+              tipo: 0
+            });
         }
        
         return (
