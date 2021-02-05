@@ -45,7 +45,7 @@ import projeto29 from './../../img/nossoProjetos/comercial/2VV.JPG';
 import projeto30 from './../../img/nossoProjetos/comercial/3VV.JPG';
 import projeto31 from './../../img/nossoProjetos/comercial/4VV.JPG';
 
-import ModalFotoAmpla from './../../pages/projetos/modal';
+import ModalFotoAmpla from './../../pages/detalheProjeto/modal';
 
 import './../../index.css'
 

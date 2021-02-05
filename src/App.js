@@ -9,11 +9,11 @@ import QuemSomos from './pages/quemSomos';
 import Servico from './pages/servico'
 import ComoFunciona from './pages/comoFunciona'
 import ControlledCarousel from './pages/carousel'
-import Video from './pages/video'
+// import Video from './pages/video'
 
 // import Slider from './pages/slide'
 
-import Projeto from './pages/projetos'
+// import Projeto from './pages/projetos'
 
 import { Button } from 'react-bootstrap';
 import ModalFundador from './pages/modal';
