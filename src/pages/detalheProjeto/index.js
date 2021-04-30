@@ -21,6 +21,10 @@ import projeto11 from './../../img/nossoProjetos/rural/7AV.JPG';
 // Residencial
 import projeto12 from './../../img/nossoProjetos/residencial/1CI.jpg';
 import projeto13 from './../../img/nossoProjetos/residencial/2CI.jpg';
+import ci3 from './../../img/nossoProjetos/residencial/3CI.jpg';
+import ci4 from './../../img/nossoProjetos/residencial/4CI.jpg';
+import ci5 from './../../img/nossoProjetos/residencial/5CI.jpg';
+
 
 import projeto14 from './../../img/nossoProjetos/residencial/1VA.JPG';
 import projeto15 from './../../img/nossoProjetos/residencial/2VA.JPG';
@@ -32,6 +36,18 @@ import projeto19 from './../../img/nossoProjetos/residencial/1P.JPG';
 import projeto20 from './../../img/nossoProjetos/residencial/2P.JPG';
 import projeto21 from './../../img/nossoProjetos/residencial/3P.JPG';
 import projeto22 from './../../img/nossoProjetos/residencial/4P.JPG';
+
+import guarapari1 from './../../img/nossoProjetos/residencial/1G.JPG';
+import guarapari2 from './../../img/nossoProjetos/residencial/2G.JPG';
+import guarapari3 from './../../img/nossoProjetos/residencial/3G.JPG';
+
+import cachoeiro4 from './../../img/nossoProjetos/residencial/4C.JPG';
+import cachoeiro5 from './../../img/nossoProjetos/residencial/5C.JPG';
+import cachoeiro6 from './../../img/nossoProjetos/residencial/6C.JPG';
+
+import cachoeiro7 from './../../img/nossoProjetos/residencial/7C.JPG';
+import cachoeiro8 from './../../img/nossoProjetos/residencial/8C.JPG';
+import cachoeiro9 from './../../img/nossoProjetos/residencial/9C.JPG';
 
 // Comercial
 import projeto23 from './../../img/nossoProjetos/comercial/1C.JPG';
@@ -217,6 +233,40 @@ class DetalheProjetos extends Component {
 
                     <hr></hr>
 
+                    <span>Instalação Residencial - 6,56 KWP - <b> Cachoeiro de Itapemirim - ES</b> </span>
+                    <div className="row " >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={cachoeiro4} onClick={() => this.setState({modalShow: true , icone: cachoeiro4})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={cachoeiro5} onClick={() => this.setState({modalShow: true , icone: cachoeiro5})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={cachoeiro6} onClick={() => this.setState({modalShow: true , icone: cachoeiro6})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                        </div>
+                    </div>
+
+                    <hr></hr>
+
+                    <span>Instalação Residencial - 3,28 KWP - <b> Cachoeiro de Itapemirim - ES</b> </span>
+                    <div className="row " >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={cachoeiro6} onClick={() => this.setState({modalShow: true , icone: cachoeiro6})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={cachoeiro7} onClick={() => this.setState({modalShow: true , icone: cachoeiro7})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={cachoeiro8} onClick={() => this.setState({modalShow: true , icone: cachoeiro8})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                        </div>
+                    </div>
+
+                    <hr></hr>
+
                     <span className="mt-3">Instalação Residencial - 4,2 KWP - <b> Vargem Alta - ES</b> </span>
                     <div className="row" >
                         <div className="col-lg-3 ml-auto mt-2">
@@ -257,6 +307,23 @@ class DetalheProjetos extends Component {
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto22} onClick={() => this.setState({modalShow: true , icone: projeto22})}/>
+                        </div>
+                    </div>
+
+                    <hr></hr>
+
+                    <span className="mt-3">Instalação Residencial - 5,5 KWP - <b> Guarapari - ES</b> </span>
+                    <div className="row" >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={guarapari1} onClick={() => this.setState({modalShow: true , icone: guarapari1})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={guarapari2} onClick={() => this.setState({modalShow: true , icone: guarapari2})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={guarapari3} onClick={() => this.setState({modalShow: true , icone: guarapari3})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
                         </div>
                     </div>
 
