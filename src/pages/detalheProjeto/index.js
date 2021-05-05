@@ -21,10 +21,6 @@ import projeto11 from './../../img/nossoProjetos/rural/7AV.JPG';
 // Residencial
 import projeto12 from './../../img/nossoProjetos/residencial/1CI.jpg';
 import projeto13 from './../../img/nossoProjetos/residencial/2CI.jpg';
-import ci3 from './../../img/nossoProjetos/residencial/3CI.jpg';
-import ci4 from './../../img/nossoProjetos/residencial/4CI.jpg';
-import ci5 from './../../img/nossoProjetos/residencial/5CI.jpg';
-
 
 import projeto14 from './../../img/nossoProjetos/residencial/1VA.JPG';
 import projeto15 from './../../img/nossoProjetos/residencial/2VA.JPG';
@@ -253,13 +249,13 @@ class DetalheProjetos extends Component {
                     <span>Instalação Residencial - 3,28 KWP - <b> Cachoeiro de Itapemirim - ES</b> </span>
                     <div className="row " >
                         <div className="col-lg-3 ml-auto mt-2">
-                            <img className="w-100" src={cachoeiro6} onClick={() => this.setState({modalShow: true , icone: cachoeiro6})}/>
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={cachoeiro7} onClick={() => this.setState({modalShow: true , icone: cachoeiro7})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={cachoeiro8} onClick={() => this.setState({modalShow: true , icone: cachoeiro8})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={cachoeiro9} onClick={() => this.setState({modalShow: true , icone: cachoeiro9})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                         </div>
