@@ -6,6 +6,7 @@ import DetalheProjetos from './pages/detalheProjeto/index'
 
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Simulador from './pages/simulador';
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
     <BrowserRouter>
@@ -13,6 +14,7 @@ ReactDOM.render(
             <Route path="/" exact={true} component={App} />
             <Route path="/projetos/:tipo" component={DetalheProjetos} />
             <Route path="/projetos" component={DetalheProjetos} />
+            <Route path="/simulador" component={Simulador} />
         </Switch>
     </ BrowserRouter>
     , document.getElementById('root'));

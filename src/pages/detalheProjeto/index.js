@@ -117,9 +117,6 @@ class DetalheProjetos extends Component {
                   <li className="nav-item mx-0 mx-lg-1">
                     <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/">Home</a>
                   </li>
-                   <li className="nav-item mx-0 mx-lg-1">
-                    <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#quemsomos">Quem somos</a>
-                  </li>
                   <li className="nav-item mx-0 mx-lg-1">
                     <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#servico">Serviços</a>
                   </li>
@@ -128,6 +125,13 @@ class DetalheProjetos extends Component {
                   </li>
                   <li className="nav-item mx-0 mx-lg-1">
                     <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/#contato">Contato</a>
+                  </li>
+                  <li className="nav-item mx-0 mx-lg-1">
+                    <div className="ctas-button">
+                      <a href="/simulador">
+                        <button className="btn primary cta">Simulador</button>
+                      </a>
+                    </div>
                   </li>
                 </ul>
               </div>

@@ -201,3 +201,52 @@ a {
 .p-3rem {
   padding: 3rem 0;
 }
+
+.home-slider .ctas-button a button {
+  padding: 5px 10px;
+  font-weight: bold;
+  height: 34px;
+  background-color: #ff9d02;
+  color: white;
+  border: 0px;
+  border-radius: 30px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 15px;
+  display: block;
+  width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Chivo, sans-serif;
+}
+
+.cta {
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 9;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+button.btn.primary.cta:hover {
+  background-color: orange;
+  color: white;
+}
+
+button.btn.primary.cta {
+  background-color: #ff9d02;
+  color: white;
+}
+
+.frameSimulador {
+  width: 100%;
+  min-height: calc(100vh - 81px);
+  border-style:none;
+}
+
+.section-simulador {
+  padding-top: 145px;
+}

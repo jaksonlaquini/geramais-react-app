@@ -62,19 +62,32 @@ function App() {
                 <li className="nav-item mx-0 mx-lg-1">
                   <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#comoFunciona">Como Funciona</a>
                 </li>
+               
+                <li className="nav-item mx-0 mx-lg-1">
+                  <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contato">Contato</a>
+                </li>
                 <li className="nav-item mx-0 mx-lg-1">
                   <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" onClick={() => setModalOrcamentoShow(true)}>Orçamento</a>
                 </li>
                 <li className="nav-item mx-0 mx-lg-1">
-                  <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contato">Contato</a>
+                  <div className="ctas-button">
+                    <a href="/simulador">
+                      <button className="btn primary cta">Simulador</button>
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-      <div id="page-top" className="mtBanner mbBanner">
+      <div id="page-top" className="home-slider mtBanner mbBanner">
         <section className="page-section">
         {/* <Video></Video> */}
+        <div className="ctas-button">
+          <a href="/simulador">
+            <button className="btn primary cta">Simulador Solar</button>
+          </a>
+        </div>
         <ControlledCarousel />
         </section>
       </div>
