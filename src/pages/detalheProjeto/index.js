@@ -24,12 +24,9 @@ import projeto13 from './../../img/nossoProjetos/residencial/2CI.jpg';
 
 import projeto14 from './../../img/nossoProjetos/residencial/1VA.JPG';
 import projeto15 from './../../img/nossoProjetos/residencial/2VA.JPG';
-import projeto16 from './../../img/nossoProjetos/residencial/3VA.JPG';
 import projeto17 from './../../img/nossoProjetos/residencial/4VA.JPG';
-import projeto18 from './../../img/nossoProjetos/residencial/5VA.JPG';
 
 import projeto19 from './../../img/nossoProjetos/residencial/1P.JPG';
-import projeto20 from './../../img/nossoProjetos/residencial/2P.JPG';
 import projeto21 from './../../img/nossoProjetos/residencial/3P.JPG';
 import projeto22 from './../../img/nossoProjetos/residencial/4P.JPG';
 
@@ -45,17 +42,33 @@ import cachoeiro7 from './../../img/nossoProjetos/residencial/7C.JPG';
 import cachoeiro8 from './../../img/nossoProjetos/residencial/8C.JPG';
 import cachoeiro9 from './../../img/nossoProjetos/residencial/9C.JPG';
 
+import serra1 from './../../img/nossoProjetos/residencial/1Serra.jpg';
+import serra2 from './../../img/nossoProjetos/residencial/2Serra.jpg';
+import serra3 from './../../img/nossoProjetos/residencial/3Serra.JPG';
+
+import vitoria1 from './../../img/nossoProjetos/residencial/1Vitoria.JPG';
+import vitoria2 from './../../img/nossoProjetos/residencial/2Vitoria.JPG';
+
+import vitoria3 from './../../img/nossoProjetos/residencial/3Vitoria.jpeg';
+import vitoria4 from './../../img/nossoProjetos/residencial/4Vitoria.jpeg';
+
+import vitoria8551 from './../../img/nossoProjetos/residencial/vitoria8551.jpg';
+import vitoria8552 from './../../img/nossoProjetos/residencial/vitoria8552.JPG';
+import vitoria8553 from './../../img/nossoProjetos/residencial/vitoria8553.JPG';
+
 // Comercial
-import projeto23 from './../../img/nossoProjetos/comercial/1C.JPG';
 import projeto24 from './../../img/nossoProjetos/comercial/2C.JPG';
 import projeto25 from './../../img/nossoProjetos/comercial/3C.JPG';
-import projeto26 from './../../img/nossoProjetos/comercial/4C.JPG';
 import projeto27 from './../../img/nossoProjetos/comercial/5C.JPG';
 
 import projeto28 from './../../img/nossoProjetos/comercial/1VV.JPG';
-import projeto29 from './../../img/nossoProjetos/comercial/2VV.JPG';
 import projeto30 from './../../img/nossoProjetos/comercial/3VV.JPG';
 import projeto31 from './../../img/nossoProjetos/comercial/4VV.JPG';
+
+import projetoComercialTres1 from './../../img/nossoProjetos/comercial/1VACT.jpg';
+import projetoComercialTres2 from './../../img/nossoProjetos/comercial/2VACT.jpg';
+import projetoComercialTres3 from './../../img/nossoProjetos/comercial/3VACT.jpg';
+import projetoComercialTres4 from './../../img/nossoProjetos/comercial/4VACT.jpg';
 
 import ModalFotoAmpla from './../../pages/detalheProjeto/modal';
 
@@ -276,17 +289,56 @@ class DetalheProjetos extends Component {
                             <img className="w-100" src={projeto15} onClick={() => this.setState({modalShow: true , icone: projeto15})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
-                            <img className="w-100" src={projeto16} onClick={() => this.setState({modalShow: true , icone: projeto16})}/>
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto17} onClick={() => this.setState({modalShow: true , icone: projeto17})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
-                            <img className="w-100" src={projeto18} onClick={() => this.setState({modalShow: true , icone: projeto18})}/>
+                        </div>
+                    </div>
+
+                    <hr></hr>
+
+                    <span className="mt-3">Instalação Residencial - 4 KWP - <b> Vitória - ES</b> </span>
+                    <div className="row" >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={vitoria1} onClick={() => this.setState({modalShow: true , icone: vitoria1})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={vitoria2} onClick={() => this.setState({modalShow: true , icone: vitoria2})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
+                        </div>
+                    </div>
+
+                    <hr></hr>
+
+                    <span className="mt-3">Instalação Residencial - 6,44 KWP - <b> Vitória - ES</b> </span>
+                    <div className="row" >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={vitoria3} onClick={() => this.setState({modalShow: true , icone: vitoria3})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={vitoria4} onClick={() => this.setState({modalShow: true , icone: vitoria4})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                        </div>
+                    </div>
+
+                    <hr></hr>
+
+                    <span className="mt-3">Instalação Residencial - 8,55 KWP - <b> Vitória - ES</b> </span>
+                    <div className="row" >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={vitoria8551} onClick={() => this.setState({modalShow: true , icone: vitoria8551})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={vitoria8552} onClick={() => this.setState({modalShow: true , icone: vitoria8552})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={vitoria8553} onClick={() => this.setState({modalShow: true , icone: vitoria8553})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                         </div>
@@ -300,13 +352,12 @@ class DetalheProjetos extends Component {
                             <img className="w-100" src={projeto19} onClick={() => this.setState({modalShow: true , icone: projeto19})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
-                            <img className="w-100" src={projeto20} onClick={() => this.setState({modalShow: true , icone: projeto20})}/>
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto21} onClick={() => this.setState({modalShow: true , icone: projeto21})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto22} onClick={() => this.setState({modalShow: true , icone: projeto22})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
                         </div>
                     </div>
 
@@ -327,6 +378,23 @@ class DetalheProjetos extends Component {
                         </div>
                     </div>
 
+                    <hr></hr>
+
+                    <span>Instalação Residencial - 3,5 KWP - <b> Serra - ES</b> </span>
+                    <div className="row " >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={serra1} onClick={() => this.setState({modalShow: true , icone: serra1})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={serra2} onClick={() => this.setState({modalShow: true , icone: serra2})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={serra3} onClick={() => this.setState({modalShow: true , icone: serra3})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                        </div>
+                    </div>
+
                 </div>
                
             </section> : ''}
@@ -340,23 +408,13 @@ class DetalheProjetos extends Component {
                     <span>Instalação Comercial - 28,98 KWP - <b> Castelo - ES</b> </span>
                     <div className="row " >
                         <div className="col-lg-3 ml-auto mt-2">
-                            <img className="w-100" src={projeto23} onClick={() => this.setState({modalShow: true , icone: projeto23})}/>
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto24} onClick={() => this.setState({modalShow: true , icone: projeto24})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto25} onClick={() => this.setState({modalShow: true , icone: projeto25})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
-                            <img className="w-100" src={projeto26} onClick={() => this.setState({modalShow: true , icone: projeto26})}/>
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto27} onClick={() => this.setState({modalShow: true , icone: projeto27})}/>
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                         </div>
@@ -370,13 +428,30 @@ class DetalheProjetos extends Component {
                             <img className="w-100" src={projeto28} onClick={() => this.setState({modalShow: true , icone: projeto28})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
-                            <img className="w-100" src={projeto29} onClick={() => this.setState({modalShow: true , icone: projeto29})}/>
-                        </div>
-                        <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto30} onClick={() => this.setState({modalShow: true , icone: projeto30})}/>
                         </div>
                         <div className="col-lg-3 ml-auto mt-2">
                             <img className="w-100" src={projeto31} onClick={() => this.setState({modalShow: true , icone: projeto31})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                        </div>
+                    </div>
+
+                    <hr></hr>
+
+                    <span className="mt-3">Instalação Comercial - 30 KWP - <b> Rio Novo do Sul - ES</b> </span>
+                    <div className="row" >
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={projetoComercialTres1} onClick={() => this.setState({modalShow: true , icone: projetoComercialTres1})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={projetoComercialTres2} onClick={() => this.setState({modalShow: true , icone: projetoComercialTres2})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={projetoComercialTres3} onClick={() => this.setState({modalShow: true , icone: projetoComercialTres3})}/>
+                        </div>
+                        <div className="col-lg-3 ml-auto mt-2">
+                            <img className="w-100" src={projetoComercialTres4} onClick={() => this.setState({modalShow: true , icone: projetoComercialTres4})}/>
                         </div>
                     </div>
                     
